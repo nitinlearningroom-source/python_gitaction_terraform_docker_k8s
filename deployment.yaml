@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-k8s-terraform
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-k8s-terraform
+  template:
+    metadata:
+      labels:
+        app: deployment-k8s-terraform
+    spec:
+      containers:
+      - name: deployment-k8s-terraform
+        image: nitindockerlearning/deployment-k8s-terraform:v1
+        ports:
+        - containerPort: 5000

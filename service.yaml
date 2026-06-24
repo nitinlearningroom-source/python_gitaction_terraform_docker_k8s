@@ -1,0 +1,11 @@
+apiversion: v1
+kind: Service
+metadata:
+  name: service-k8s-terraform
+spec:
+  selector:
+    app: deployment-k8s-terraform
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
